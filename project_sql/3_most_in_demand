@@ -1,0 +1,44 @@
+/*
+Question: what are the most in-demand skills for data analyst?
+- join job postings to inner join table similar to query 2
+- identify the top 5 in-demand skills for a data analyst
+- focus on all job postings so not just remote
+- we need the count of skills 
+*/
+
+
+SELECT 
+    skills,
+    COUNT(skills_job_dim.job_id) AS demand_count
+FROM 
+    job_postings_fact
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+WHERE
+    job_title_short = 'Data Analyst' AND
+    job_location LIKE 'Calgary%'
+GROUP BY
+    skills
+ORDER BY
+    demand_count DESC
+LIMIT 5
+
+/*
+COUNT(skills_job_dim.job_id)
+
+    SQL counts every non-NULL row in the column job_id.
+
+    Since every row in skills_job_dim has both a job_id and a skill_id, COUNT(job_id) = COUNT(skill_id).
+
+✅ So in this case, it doesn’t matter which one you use — the counts are identical.
+
+Which is better?
+
+Conceptually: you are counting how many job-skill links exist per skill.
+
+Using COUNT(skills_job_dim.job_id) is slightly more descriptive because your measure is “demand per skill” (how many jobs require this skill).
+
+Using COUNT(skill_id) would also work — same result — but it’s less intuitive when thinking about job demand.
+
+*/
+
