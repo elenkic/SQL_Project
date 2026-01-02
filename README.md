@@ -105,15 +105,14 @@ ORDER BY
     salary_year_avg DESC
 ```
 
+![Skills Required For Top Paying Job](assets/2_skills_required_for_top_paying_job.png)
+*Bar graph visualizing the salary for the top 10 salaries for data analysts; ChatGPT generated this graph from my SQL query results*
+
 #### **Breakdown:**
 - SQL is leading
 - Python follows closely
 - Tableau is third
 - Other skills are R, snowflake, pandas and excel
-
-![Skills Required For Top Paying Job](assets/2_skills_required_for_top_paying_job.png)
-*Bar graph visualizing the salary for the top 10 salaries for data analysts; ChatGPT generated this graph from my SQL query results*
-
 
 ### 3. **Question: what are the most in-demand skills for data analyst?**
 - join job postings to inner join table similar to query 2
@@ -148,6 +147,16 @@ LIMIT 5
 | Power BI| 42           |
 | Tableau | 37           |
 
+#### **Breakdown:**
+- SQL is the most in demand skill for Data Analysts, almost every job requires it.
+
+- Excel is still very important, showing that traditional spreadsheet skills remain relevant.
+
+- Python is the top programming language for analytics tasks.
+
+- Power BI and Tableau indicate strong demand for data visualization and business intelligence tools.
+
+- Overall trend: employers want a mix of data querying, programming, and visualization skills for Data Analyst roles.
 
 ### 4. **QUESTION: what are the top skills based on salarty?**
 - look at the average salary associated with each skill for data analyst positions
