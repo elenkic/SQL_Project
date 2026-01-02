@@ -22,6 +22,7 @@ ORDER BY
     avg_salary DESC
 LIMIT 25
 
+
 /*
 
 Big Data & Cloud Skills Pay the Most – Tools like PySpark, Databricks, Airflow, and GCP dominate 
